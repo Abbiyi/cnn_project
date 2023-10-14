@@ -106,9 +106,7 @@ class TileBerita extends StatelessWidget {
             model.judul,
             style: GoogleFonts.oswald(fontSize: 25),
           ),
-          GestureDetector(onTap: () {
-            Navigator.push(context, MaterialPageRoute(builder: (context) => ))
-          },)
+        
         ],
       ),
     );
