@@ -1,79 +1,25 @@
+import 'package:cnn_project/model.dart';
 import 'package:flutter/material.dart';
 
 class NASIONAL extends StatelessWidget {
   const NASIONAL({super.key});
 
   @override
-  Widget build(BuildContext   context) {
+  Widget build(BuildContext context) {
     return Scaffold(
-      body: ListView(
-      children: [
-        //1
-        TileBerita(url: 'assets/nasional2.jpeg',judul: 'Gelombang Aksi Bela Palestina di Indonesia'),
-        //2
-        Column(
-          children: [
-            Image(
-              image: AssetImage("assets/nasional2.jpeg"),
-              width: 300,
-            ),
-            Text(
-              "Gelombang Aksi Bela Palestina di Indonesia",
-              style: TextStyle(
-                fontSize: 25,
-              ),
-            )
-          ],
-        ),
-        //3
-        Column(
-          children: [
-            Image(
-              image: AssetImage("assets/nasional3.jpeg"),
-              width: 300,
-            ),
-            Text(
-              "Usai Pertemuan Ketum,Prabowo Ungkap Cawapres Mengerucut 4 Nama",
-              style: TextStyle(fontSize: 25),
-            )
-          ],
-        ),
-        //4
-        Column(
-          children: [
-            Image(
-              image: AssetImage("assets/nasional4.jpeg"),
-              width: 300,
-            ),
-            Text(
-              "AHY Usulkan Nama Khofifah Jadi Cawapres Prabowo",
-              style: TextStyle(fontSize: 25),
-            )
-          ],
-        ),
-        //5
-        Column(
-          children: [
-            Image(
-              image: AssetImage("assets/nasional5.jpeg"),
-              width: 300,
-            ),
-            Text(
-              "Kejagung Tetapkan Edward Hutahaean Jadi Tersangka Korupsi BTS",
-              style: TextStyle(fontSize: 25),
-            )
-          ],
-        ),
-      ],
-    )
-    );
+        body: ListView.builder(
+      itemCount: listNasional.length,
+      itemBuilder: (context, index) => TileBerita(model: listNasional[index]),
+
+    ));
   }
 }
 
 class TileBerita extends StatelessWidget {
-  final String url,judul;
+  final Model model;
   const TileBerita({
-    super.key, required this.url, required this.judul,
+    super.key,
+    required this.model,
   });
 
   @override
@@ -81,12 +27,12 @@ class TileBerita extends StatelessWidget {
     return Column(
       children: [
         Image(
-          image: AssetImage(url),
+          image: AssetImage(model.url),
           width: 300,
         ),
         Text(
-          judul,
-          style: TextStyle(fontSize: 25),
+          model.judul,
+          style: TextStyle(fontSize: 18),
         )
       ],
     );
