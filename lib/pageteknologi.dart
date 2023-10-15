@@ -1,3 +1,4 @@
+import 'package:cnn_project/Detail.dart';
 import 'package:cnn_project/model.dart';
 import 'package:cnn_project/pagenasional.dart';
 import 'package:flutter/material.dart';
@@ -94,17 +95,25 @@ class TileBerita extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Image(
-          image: AssetImage(model.url),
-          width: 300,
+    return GestureDetector(onTap: () {
+      Navigator.push(context, MaterialPageRoute(builder: (context) => DetailsWidget(Model: model)));
+    },
+      child: Padding(
+        padding: const EdgeInsets.all(20.0),
+        child: Column(
+          children: [
+            Image(
+              image: AssetImage(model.url),
+              width: 500,
+            ),
+            Text( 
+              model.judul,
+              style: TextStyle(fontSize: 20,fontWeight: FontWeight.w500),
+              
+            )
+          ],
         ),
-        Text(
-          model.judul,
-          style: TextStyle(fontSize: 25),
-        )
-      ],
+      ),
     );
   }
 }
