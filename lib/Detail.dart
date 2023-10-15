@@ -32,40 +32,45 @@ class DetailsWidget extends StatelessWidget {
   }
 
   _body(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(16.0),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Container(
-            width: MediaQuery.of(context).size.width,
-            height: MediaQuery.of(context).size.height / 3.2,
-            margin: EdgeInsets.symmetric(vertical: 3.0),
-            decoration: BoxDecoration(borderRadius: BorderRadius.circular(12)),
-            clipBehavior: Clip.antiAlias,
-            child: Image.asset(
-              Model.url,
-              fit: BoxFit.fill,
+    return SingleChildScrollView(
+      child: Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Container(
+              width: MediaQuery.of(context).size.width,
+              height: MediaQuery.of(context).size.height / 3.2,
+              margin: EdgeInsets.symmetric(vertical: 3.0),
+              decoration: BoxDecoration(borderRadius: BorderRadius.circular(12)),
+              clipBehavior: Clip.antiAlias,
+              child: Image.asset(
+                Model.url,
+                fit: BoxFit.fill,
+              ),
             ),
-          ),
-          Text(
-            '${Model.judul}',
-            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 24),
-          ),
-          SizedBox(
-            height: 8,
-          ),
-          Text(''),
-          SizedBox(
-            height: 8,
-          ),
-          Expanded(
-              child: Text(
-              '${Model.desc}',
-            textAlign: TextAlign.start,
-            style: TextStyle(fontSize: 18.0),
-          ))
-        ],
+            Text(
+              '${Model.judul}',
+              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 24),
+            ),
+            SizedBox(
+              height: 8,
+            ),
+            Text(''),
+            SizedBox(
+              height: 8,
+            ),
+            Container(
+              height: 950,
+                  child:Text(
+                  
+                  '${Model.desc}',
+                
+                style: TextStyle(fontSize: 18.0),
+              )),
+            
+          ],
+        ),
       ),
     );
   }

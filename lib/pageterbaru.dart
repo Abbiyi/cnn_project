@@ -1,4 +1,5 @@
 import 'package:cnn_project/Detail.dart';
+import 'package:cnn_project/carousel.dart';
 import 'package:cnn_project/model.dart';
 import 'package:flutter/material.dart';
 // import 'package:cnn_project/pagenasional.dart';
@@ -11,7 +12,11 @@ class MyPages extends StatelessWidget {
     return Scaffold(
         body: ListView.builder(
           itemCount: listTerbaru.length,
-          itemBuilder: (context, index) => TileBerita(model: listTerbaru[index]),
+          itemBuilder: (context, index) => Column(
+            children: [ Carousel(),
+              TileBerita(model: listTerbaru[index]),
+            ],
+          ),
       
         // children: [
         //   //1

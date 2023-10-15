@@ -109,7 +109,8 @@ class TileBerita extends StatelessWidget {
             ),
             Text(
               model.judul,
-              style:TextStyle(fontSize: 18,fontWeight: FontWeight.w500),
+              style:TextStyle(fontSize: 18,fontWeight: FontWeight.w500,),
+              
             )
           ],
         ),

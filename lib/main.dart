@@ -1,4 +1,7 @@
+import 'package:cnn_project/CNN.dart';
+import 'package:cnn_project/carousel.dart';
 import 'package:cnn_project/loginPage.dart';
+import 'package:cnn_project/pageterbaru.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -19,7 +22,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         
       ),
-      home: loginPage(),
+      home: CNN(),
     );
   }
 }
