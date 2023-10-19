@@ -61,7 +61,7 @@ class DetailsWidget extends StatelessWidget {
               height: 8,
             ),
             Container(
-              height: 950,
+              height: 1200,
                   child:Text(
                   
                   '${Model.desc}',

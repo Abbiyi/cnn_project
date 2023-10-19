@@ -2,7 +2,7 @@ import 'package:cnn_project/Detail.dart';
 import 'package:cnn_project/carousel.dart';
 import 'package:cnn_project/model.dart';
 import 'package:flutter/material.dart';
-// import 'package:cnn_project/pagenasional.dart';
+import 'package:cnn_project/pagenasional.dart';
 
 class MyPages extends StatelessWidget {
   const MyPages({super.key});
@@ -10,13 +10,19 @@ class MyPages extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: ListView.builder(
-          itemCount: listTerbaru.length,
-          itemBuilder: (context, index) => Column(
-            children: [ Carousel(),
-              TileBerita(model: listTerbaru[index]),
+        body: SingleChildScrollView(
+          child: Column(
+            children: [
+              Carousel(),
+              ListView.builder(
+                shrinkWrap: true,
+                itemCount: listTerbaru.length,
+                itemBuilder: (context, index) => TileBerita (model: listTerbaru[index]),
+                physics: NeverScrollableScrollPhysics(), 
+                ),
             ],
           ),
+        ),
       
         // children: [
         //   //1
@@ -87,8 +93,8 @@ class MyPages extends StatelessWidget {
         //     ],
         //   ),
         // ],
-      ),
-    );
+      );
+    
   }
 }
 

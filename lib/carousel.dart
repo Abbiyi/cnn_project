@@ -11,7 +11,7 @@ class Carousel extends StatelessWidget {
   options: CarouselOptions(
     
     height: 150.0,
-    
+
     aspectRatio: 16/9,
     initialPage: 2,
     autoPlay: true,
@@ -19,18 +19,21 @@ class Carousel extends StatelessWidget {
     showIndicator: true,
     enableInfiniteScroll: true,
           autoPlayInterval: Duration(seconds: 3),
-      autoPlayAnimationDuration: Duration(milliseconds: 800),
+      autoPlayAnimationDuration: Duration(milliseconds: 1000),
     slideIndicator: CircularSlideIndicator(),
+    
+    
     
   ),
   items: [
     
     Container(
           height: 200,
-          width:200,
+          width:300,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(20),
             image: DecorationImage(image: AssetImage("assets/otomotif2.jpeg"),
+            
             fit: BoxFit.cover,
             
             ),
@@ -40,10 +43,10 @@ class Carousel extends StatelessWidget {
         ),
         Container(
           height: 200,
-          width:200,
+          width:300,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(20),
-            image: DecorationImage(image: AssetImage("assets/otomotif1.jpeg"),
+            image: DecorationImage(image: AssetImage("assets/nasional4.jpeg"),
             fit: BoxFit.fill
             )
 
@@ -54,17 +57,48 @@ class Carousel extends StatelessWidget {
         ),
         Container(
           height: 200,
-          width:200,
+          width:300,
+          
           decoration: BoxDecoration(
+            
             borderRadius: BorderRadius.circular(20),
-            image: DecorationImage(image: AssetImage("assets/otomotif3.jpeg"),
+            image: DecorationImage(image: AssetImage("assets/teknologi4.jpeg",),
             fit: BoxFit.fill
             ),
             
           ),
           
-        )
+        ),
+        Container(
+          height: 200,
+          width:300,
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(20),
+            image: DecorationImage(image: AssetImage("assets/berita2.jpg"),
+            
+            fit: BoxFit.cover,
+            
+            ),
+            
+          ),
+          
+        ),
+        Container(
+          height: 200,
+          width:300,
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(20),
+            image: DecorationImage(image: AssetImage("assets/olahraga4.jpeg"),
+            
+            fit: BoxFit.cover,
+            
+            ),
+            
+          ),
+          
+        ),
         ].toList(),
 );
   }
 }
+
